@@ -1,11 +1,14 @@
-# nordvpn-ovpn-importing-tool
+# nordvpn-ovpn-importing-scripts
 
 ### Description
 
 `download-configs.sh`: 
-- downloads all .ovpn configurations in a folder (`OVPN_PATH` variable)
+- downloads all .ovpn configurations in a folder (`OVPN_PATH` variable) and keeps TCP configs only
+- remove old configurations from the folder
 
 ![import](https://i.postimg.cc/LHtnL4H6/import.png)
+
+---
 
 `import-configs.sh` :
 - import all .ovpn configurations from a folder (`OVPN_PATH` variable) to networkmanger
