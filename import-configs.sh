@@ -5,6 +5,7 @@ USERNAME=""
 PASSWORD=""
 #configurations path
 OVPN_PATH=""
+limit=3
 
 #remove all vpn configs
 echo -e "\n\e[41m----- Removing OLD .ovpn configs ----- \e[0m\n"
@@ -13,7 +14,7 @@ while IFS= read -r UUID; do nmcli connection delete $UUID; done <<< "$VPN"
 
 #add new configs
 echo -e "\n\e[42m\e[30m----- Importing NEW .ovpn configs (randomized) ----- \e[0m\n"
-uk=0; it=0; de=0; fr=0; jp=0; us=0; nl=0; limit=3
+uk=0; it=0; de=0; fr=0; jp=0; us=0; nl=0;
 cd "$OVPN_PATH"
 for file in `ls "$OVPN_PATH" | sort -R --random-source=/dev/urandom`; do
 	if [[ "$file" =~ (uk)[0-9][0-9][0-9]. ]] && [[ "$uk" -lt "$limit" ]];then
