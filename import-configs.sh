@@ -17,7 +17,7 @@ echo -e "\n\e[42m\e[30m----- Importing NEW .ovpn configs (randomized) ----- \e[0
 uk=0; it=0; de=0; fr=0; jp=0; us=0; nl=0;
 cd "$OVPN_PATH"
 for file in `ls "$OVPN_PATH" | sort -R --random-source=/dev/urandom`; do
-	if [[ "$file" =~ (uk)[0-9][0-9][0-9]. ]] && [[ "$uk" -lt "$limit" ]];then
+	if [[ "$file" =~ uk[0-9][0-9][0-9]. ]] && [[ "$uk" -lt "$limit" ]];then
 		nmcli connection import type openvpn file "$file"
 		nmcli connection modify "${file%?????}" ipv4.never-default no
 		nmcli connection modify "${file%?????}" ipv4.ignore-auto-dns no
