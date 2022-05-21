@@ -1,7 +1,7 @@
 # nordvpn-ovpn-importing-scripts
 
 ### Description
-Two scripts capable of download all ovpn configurations from NordVpn website and add them in network manager automatically with credentials.
+Two scripts capable of downloading all ovpn configurations from NordVpn website and add them in network manager, automatically, with credentials.
 
 `download-configs.sh`
 
